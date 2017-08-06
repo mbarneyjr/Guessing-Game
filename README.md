@@ -39,7 +39,7 @@ Once you give your first guess, you will be presented with a history of your gue
 ```
 Guess number 5
 ===========================HISTORY============================
-GUESS                              RIGHT COLOR   RIGHT SPOT
+               GUESS               RIGHT COLOR   RIGHT SPOT
 black  white  blue   purple red    4             0
 blue   black  purple white  red    2             2
 blue   black  white  red    purple 0             4

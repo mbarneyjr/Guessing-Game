@@ -1,6 +1,7 @@
 from __future__ import print_function
 import random
 import time
+import termcolor
 
 BLACK = "black"
 WHITE = "white"
@@ -38,9 +39,19 @@ def make_guess(guess, to_guess):
     result = check_guess(guess, to_guess)
     return result
 
+def print_colors(colors):
+    for color in colors:
+        highlight = color
+        text_color = 'grey'
+        if color == 'purple': highlight = 'magenta'
+        if color == 'black': highlight = 'grey'; text_color = 'white'
+        print(termcolor.colored(color.ljust(7), text_color, 'on_' + highlight), end=' ')
+
 def get_guess():
     guess = []
-    print("Your options are: " + str(COLORS))
+    print("Your options are: ", end='')
+    print_colors(COLORS)
+    print('')
     while len(guess) < 5:
         input = ''
         while len(guess) < 5:
@@ -52,6 +63,8 @@ def get_guess():
                 for g in guesses:
                     if g in COLORS:
                         guess.append(g)
+                    elif g == 'quit':
+                        return 'quit'
                     else:
                         print(g + " is not valid, it will not be included")
     return guess
@@ -61,8 +74,7 @@ def display_history(history):
     print("GUESS".center(35), end='')
     print("RIGHT COLOR   RIGHT SPOT")
     for i in range(len(history['guess'])):
-        for color in history['guess'][i]:
-            print(color.ljust(7), end='')
+        print_colors(history['guess'][i])
         print(str(history['right_color'][i]).ljust(14), end='')
         print(str(history['right_spot'][i]).ljust(12), end='')
         print("")
@@ -84,6 +96,8 @@ def play(answer):
             display_history(history)
 
         user_guess = get_guess()
+        if user_guess == 'quit':
+            break
         right_spot, right_color = make_guess(user_guess, answer)
 
         history['guess'].append(user_guess)
@@ -97,10 +111,11 @@ def play(answer):
             guess_number += 1
         print("\n\n\n")
 
-    if guess_number >= 10:
+    if guess_number >= 10 or done != True:
         print("You lose")
-        print("The answer was:")
-        print(answer)
+        print("The answer was: ", end='')
+        print_colors(answer)
+        print('')
 
 def main():
     answer = randomize_answer()
