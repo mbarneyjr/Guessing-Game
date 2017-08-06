@@ -4,6 +4,10 @@ This is a simple guessing game where you have to guess the pattern of 5 colors.
 
 I made this modelled after a physical board game; I want to develop an agent to play this game optimally.
 
+## Dependencies
+
+Currently this project only depends on the python package `termcolor`, used for coloring the display.
+
 ## How To Play
 
 A pattern of 5 colors is randomly generated, and you have 10 chances to guess the correct pattern. There are seven possible colors, and the pattern may have repeating colors.
