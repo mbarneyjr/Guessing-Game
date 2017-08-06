@@ -38,13 +38,13 @@ Once you give your first guess, you will be presented with a history of your gue
 
 ```
 Guess number 5
-=====HISTORY=====
-GUESS                                   RIGHT COLOR   RIGHT SPOT
-['black', 'white', 'blue', 'purple', 'red']     4       0
-['blue', 'black', 'purple', 'white', 'red']     2       2
-['blue', 'black', 'white', 'red', 'purple']     0       4
-['blue', 'black', 'white', 'red', 'yellow']     0       4
-=================
+===========================HISTORY============================
+GUESS                              RIGHT COLOR   RIGHT SPOT
+black  white  blue   purple red    4             0
+blue   black  purple white  red    2             2
+blue   black  white  red    purple 0             4
+blue   black  white  red    yellow 0             4
+==============================================================
 Your options are: ['black', 'white', 'blue', 'purple', 'red', 'yellow', 'green']
 What would you like to guess:
 ```

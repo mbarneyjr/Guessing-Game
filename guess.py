@@ -57,11 +57,17 @@ def get_guess():
     return guess
 
 def display_history(history):
-    print("=====HISTORY=====")
-    print("GUESS\t\t\t\t\tRIGHT COLOR   RIGHT SPOT")
+    print("HISTORY".center(62, "="))
+    print("GUESS".center(35), end='')
+    print("RIGHT COLOR   RIGHT SPOT")
     for i in range(len(history['guess'])):
-        print(str(history['guess'][i]) + "\t" + str(history['right_color'][i]) + "\t" + str(history['right_spot'][i]))
-    print("=================")
+        for color in history['guess'][i]:
+            print(color.ljust(7), end='')
+        print(str(history['right_color'][i]).ljust(14), end='')
+        print(str(history['right_spot'][i]).ljust(12), end='')
+        print("")
+    print("".center(62, "="))
+
 
 def play(answer):
     history = dict()
