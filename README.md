@@ -52,3 +52,5 @@ What would you like to guess:
 - The `GUESS` column will list the pattern you guessed, in order.
 - The `RIGHT COLOR` column will tell you how many colors you got right, but aren't in the right spot.
 - The `RIGHT SPOT` column will tell you how many colors you got right, and in the right spot.
+
+If you type "quit" as an answer, you will leave the game.
